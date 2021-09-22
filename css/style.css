@@ -1,0 +1,219 @@
+:root{
+    --blue: hsl(223, 87%, 63%);
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    max-width: 1440px;
+    min-width: 320px;
+
+    padding: 0 10px;
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+    color: var(--very-dark-blue);
+    line-height: 1.5;
+}
+h1{ font-size: 2.5em;}
+h1 span { font-weight: 300; color: var(--gray); }
+
+
+/* Main */
+
+main{
+    margin: 80px 0 200px 0;
+    max-width: 700px;
+    display: grid;
+    gap: 50px;
+}
+
+/* Div Container */
+main div.container {
+    text-align: center;
+    display: grid;
+}
+main div.container img.logo {
+    width: 100px;
+    justify-self: center;
+}
+main div.container h1 {
+    margin-top: 30px;
+}
+
+/* Form --- --- --- --- */
+main div.container form{
+    justify-self: center;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Input Email */
+main div.container form div.input-email{
+    position: relative;
+    width: 70%;
+}
+main div.container form div.input-email p {
+    position: absolute;
+    left: 30px; bottom: -30;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--light-red);
+    display: none;
+}
+main div.container form.error div.input-email p { display: block; }
+main div.container form input{
+    padding: 15px 30px;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid var(--pale-blue);
+    border-radius: 40px;
+}
+input::placeholder {
+    color: var(--pale-blue);
+    opacity: 0.5;
+}
+main div.container form div.input-email input:focus{
+    outline: none;
+    border: 2px solid var(--pale-blue);
+}
+
+main div.container form.error div.input-email input{
+    border: 2px solid var(--light-red);
+}
+
+/*-- -- -- -- -- -- -- -- -- -- -- -- --*/
+
+
+
+main div.container form button {
+    padding: 15px;
+    width: 30%;
+    border:none;
+    border-radius: 40px;
+    background: var(--blue);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 10px var(--pale-blue);
+}
+main div.container form button:hover {
+    background: rgb(118, 152, 240);
+}
+
+/*--- --- --- --- --- --- ---*/
+main div.sample-image{
+    margin-top: 40px;
+}
+
+main div.sample-image img.dashboard {
+    width: 100%;
+}
+
+
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+}
+footer div.icons{
+    display: flex;
+    gap: 20px;
+    justify-self: center;
+}
+
+footer div.icons > div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--gray);
+}
+footer div.icons a i {
+    color: var(--blue);
+}
+footer div.icons  div:hover{
+    background: var(--blue);
+}
+footer div.icons  div:hover a i {
+    color: white;
+}
+
+footer p{
+    font-size: 0.8em;
+    justify-self: center;
+    margin-top: 30px;
+}
+
+
+
+
+/* Smaller Screen */
+
+@media screen and (max-width: 600px) {
+    h1{
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body{
+        padding: 0 20px;
+    }
+    h1{
+        font-size: 1.4em;
+    }
+
+    main div.container form {
+        flex-flow: wrap row;
+        padding: 0 10px;
+    }
+    main div.container form.error {
+        gap: 40px;
+    }
+    main div.container form div.input-email {
+        width: 100%;
+    }
+    main div.container form input {
+        padding: 10px 20px;
+        font-size: 0.8em;
+    }
+    main div.container form input::placeholder{
+        font-size: 0.8em;
+    }
+    main div.container form button{
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    
+    footer p {
+        font-size: 0.6em;
+    }
+}
+
+
